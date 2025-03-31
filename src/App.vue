@@ -3,6 +3,7 @@ import { onMounted, ref } from "vue";
 import { AgGridVue } from "ag-grid-vue3";
 import CompanyLogoRenderer from "@/components/CompanyLogoRenderer.vue";
 import MissionResultRenderer from "@/components/MissionResultRenderer.vue";
+import Chart from "@/pages/Chart.vue";
 
 onMounted(async () => {
   await fetchData();
@@ -79,6 +80,7 @@ function dateFormatter(params) {
       @cell-value-changed="onCellValueChanged"
       @selection-changed="onSelectionChanged"
     />
+    <Chart />
   </div>
 </template>
 
