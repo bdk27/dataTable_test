@@ -3,6 +3,7 @@ import { onMounted, ref } from "vue";
 import { AgGridVue } from "ag-grid-vue3";
 import CompanyLogoRenderer from "@/components/CompanyLogoRenderer.vue";
 import MissionResultRenderer from "@/components/MissionResultRenderer.vue";
+import { htmlToPDF } from "@/utils/html2pdf";
 import Chart from "@/pages/Chart.vue";
 
 onMounted(async () => {
@@ -69,7 +70,13 @@ function dateFormatter(params) {
 </script>
 
 <template>
-  <div class="container mx-auto">
+  <button
+    class="p-3 bg-blue-500"
+    @click="() => htmlToPDF('test-id', 'test', '#fff')"
+  >
+    列印pdf
+  </button>
+  <div class="container mx-auto" id="test-id">
     <AgGridVue
       class="w-full h-[500px]"
       :rowData="rowData"

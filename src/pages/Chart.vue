@@ -11,12 +11,12 @@ onMounted(() => {
     { value: 300, name: "c", itemStyle: { color: "#4D80E4" } },
   ]);
   window.addEventListener("resize", () => {
-    resize();
+    try {
+      resize();
+    } catch (err) {
+      console.error("Resize error:", err);
+    }
   });
-});
-
-onUnmounted(() => {
-  window.removeEventListener("resize");
 });
 </script>
 
