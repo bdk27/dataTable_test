@@ -3,6 +3,7 @@ import { onMounted, ref } from "vue";
 import { AgGridVue } from "ag-grid-vue3";
 import CompanyLogoRenderer from "@/components/CompanyLogoRenderer.vue";
 import MissionResultRenderer from "@/components/MissionResultRenderer.vue";
+import Pagination from "./components/Pagination.vue";
 import { htmlToPDF } from "@/utils/html2pdf";
 import Chart from "@/pages/Chart.vue";
 
@@ -88,6 +89,7 @@ function dateFormatter(params) {
       @selection-changed="onSelectionChanged"
     />
     <Chart />
+    <Pagination />
   </div>
 </template>
 
